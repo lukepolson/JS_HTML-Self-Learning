@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<!-- RULE OF THUMB:
+		Any javascript code that needs to be loaded BEFORE
+		HTML code is inserted INSIDE the head, but if it needs to be loaded 
+		AFTER HTML code, then insert AFTER the body-->
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+		<div id="section">
+			<p>This is a paragraph from HTML</p>
+		</div>
+		<div>
+			<p>More text</p>
+		</div>
+		-->
+		
+		<form>
+			Value 1: <input type="text" id="value1">
+			Value 2: <input type="text" id="value2">
+			Operator:
+			<select id="operator">
+			 <option value="add">Add</option>
+			 <option value="min">Subtract</option>
+			 <option value="div">Divide</option>
+			 <option value="mul">Multiply</option>
+			</select>
+			<button type="button" onclick="calc()">Calculate</button>
+		</form>
+		
+		<div id="result"></div>
+		
+	</body>
+	
+	<script src = "js/main.js"> </script> 
+	
+	<!-- HOW TO INCLUDE JAVA SCRIPT DIRECTLY
+	<script> /* Insert in body */
+		document.body.innerHTML = "This is some text"	
+	</script>
+	-->
+	
+	<!-- HOW TO LOAD FROM OTHER FILE 
+	<script src = "js/main.js"> </script> \
+	-->
+	
+	<!-- CREATE LITTLE SCRIPT:
+		Use consol (i.e. google chrome) to test 
+		javascript code using ctrl-shift-i and then
+		going to console and typing code. The following
+		can be tested in the console: 
+	<script>
+		var num = 2
+		if (num>1) {alert("This works")}
+	</script>
+	-->
+</html>
+
