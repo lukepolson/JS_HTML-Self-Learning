@@ -1,15 +1,37 @@
+let toggleNavStatus = false;
 
-function calc() {
-	var a = parseInt(document.querySelector("#value1").value);
-	var b = parseInt(document.querySelector("#value2").value);
-	var op = document.querySelector("#operator").value;
-	var calculate;
+let toggleNav = function() {
+	let getSidebar = document.querySelector(".nav-sidebar");
+	let getSidebarUl = document.querySelector(".nav-sidebar ul");
+	let getSidebarTitle = document.querySelector(".nav-sidebar span");
+	let getSidebarLinks = document.querySelectorAll(".nav-sidebar a");
 	
-	if (op == "add") {calculate=a+b;}
-	else if (op == "sub") {calculate=a-b;}
-	else if (op == "mul") {calculate=a*b;}
-	else if (op == "div") {calculate=a/b;}
+	if (toggleNavStatus === false) {
+		getSidebarUl.style.visibility = "visible";
+		getSidebar.style.width = "272px";
+		getSidebarTitle.style.opacity = "0.5";
+		
+		let arrayLength = getSidebarLinks.length;
+		for (let i=0; i<arrayLength; i++) {
+			getSidebarLinks[i].style.opacity = "1";
+		}
+		
+		toggleNavStatus = true;
+	}
 	
-	document.querySelector("#result").innerHTML = calculate;
+	else if(toggleNavStatus === true) {
+		getSidebar.style.width = "50px";
+		getSidebarTitle.style.opacity = "0";
+		
+		let arrayLength = getSidebarLinks.length;
+		for (let i=0; i<arrayLength; i++) {
+			getSidebarLinks[i].style.opacity = "0";
+		}
+		
+		getSidebarUl.style.visibility = "hidden";
+		
+		toggleNavStatus = false;
+	}
+	
 	
 }
